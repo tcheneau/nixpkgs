@@ -1,19 +1,19 @@
 # TODO: This has a bunch of duplication with matrix-appservice-slack
 
-{ pkgs, nodejs, stdenv, lib, ... }:
+{ pkgs, nodePackages, nodejs, stdenv, lib, ... }:
 
 let
 
   packageName = with lib; concatStrings (map (entry: (concatStrings (mapAttrsToList (key: value: "${key}-${value}") entry))) (importJSON ./package.json));
 
-  nodePackages = import ./node-composition.nix {
+  ourNodePackages = import ./node-composition.nix {
     inherit pkgs nodejs;
     inherit (stdenv.hostPlatform) system;
   };
 in
-nodePackages."${packageName}".override {
+ourNodePackages."${packageName}".override (oldAttrs: {
   nativeBuildInputs = [ pkgs.makeWrapper ];
-  buildInputs = [ self.node-gyp-build ];
+  buildInputs = oldAttrs.buildInputs ++ [ nodePackages.node-gyp-build ];
 
   postInstall = ''
     makeWrapper '${nodejs}/bin/node' "$out/bin/matrix-appservice-irc" \
@@ -25,4 +25,4 @@ nodePackages."${packageName}".override {
     maintainers = with maintainers; [ puffnfresh ];
     license = licenses.asl20;
   };
-}
+})
