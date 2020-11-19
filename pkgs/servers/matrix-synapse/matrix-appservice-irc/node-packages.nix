@@ -4319,13 +4319,13 @@ let
   };
 in
 {
-  "matrix-appservice-irc-git+https://github.com/matrix-org/matrix-appservice-irc.git#0.17.1" = nodeEnv.buildNodePackage {
+  "matrix-appservice-irc-git+https://github.com/matrix-org/matrix-appservice-irc.git#0.22.0" = nodeEnv.buildNodePackage {
     name = "matrix-appservice-irc";
     packageName = "matrix-appservice-irc";
-    version = "0.17.1";
+    version = "0.22.0";
     src = fetchgit {
       url = "https://github.com/matrix-org/matrix-appservice-irc.git";
-      rev = "4c7d7ed14cd7c7d97f13d5e3b57c6e952003fa5c";
+      rev = "6a36187aeba24de13849b02b07f299403453c1b1";
       sha256 = "b8e958017c5624b9550403dca829d53bed4a480fa62b402e697864a33e746992";
     };
     dependencies = [
