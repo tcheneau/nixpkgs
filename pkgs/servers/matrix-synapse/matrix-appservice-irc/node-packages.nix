@@ -1030,13 +1030,13 @@ let
         sha512 = "bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==";
       };
     };
-    "debug-4.3.0" = {
+    "debug-4.3.1" = {
       name = "debug";
       packageName = "debug";
-      version = "4.3.0";
+      version = "4.3.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/debug/-/debug-4.3.0.tgz";
-        sha512 = "jjO6JD2rKfiZQnBoRzhRTbXjHLGLfH+UtGkWLc/UXAh/rzZMyjbgn0NcfFpqT8nd1kTtFnDiJcrIFkq4UKeJVg==";
+        url = "https://registry.npmjs.org/debug/-/debug-4.3.1.tgz";
+        sha512 = "doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==";
       };
     };
     "decamelize-1.2.0" = {
@@ -2408,22 +2408,22 @@ let
         sha512 = "LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==";
       };
     };
-    "matrix-appservice-0.4.2" = {
+    "matrix-appservice-0.6.0" = {
       name = "matrix-appservice";
       packageName = "matrix-appservice";
-      version = "0.4.2";
+      version = "0.6.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/matrix-appservice/-/matrix-appservice-0.4.2.tgz";
-        sha512 = "YD2zFiPo9FedjA86gfWFN2UVDwDBhWL1Kas/txG0iwpT6jcJmOvpPqbfuFeYk3Q3G3c5BZ8k8tABMpzS9Bu39A==";
+        url = "https://registry.npmjs.org/matrix-appservice/-/matrix-appservice-0.6.0.tgz";
+        sha512 = "MkM4PzBeNBi/AcSDWgUD6zWlGY2ckBSF3dn8IgXWf44uHDx6WZfWyIt4E/KKsx9iy3EO78IfWmK+7Qva4eug5A==";
       };
     };
-    "matrix-appservice-bridge-1.14.0-rc2" = {
+    "matrix-appservice-bridge-2.2.0" = {
       name = "matrix-appservice-bridge";
       packageName = "matrix-appservice-bridge";
-      version = "1.14.0-rc2";
+      version = "2.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/matrix-appservice-bridge/-/matrix-appservice-bridge-1.14.0-rc2.tgz";
-        sha512 = "XrgEyMCfiuHYTZ837IanAJ3C1mAgzfFwIo18DN6G+Dfc4oy/u4XsUYwViZVCvTfdMgJt2ZQdK31V8EpHD/yRww==";
+        url = "https://registry.npmjs.org/matrix-appservice-bridge/-/matrix-appservice-bridge-2.2.0.tgz";
+        sha512 = "pe4jEvfEZzsOscFktq3q2AoiF5Qepv8PJMyY1oPCJx4WsXfhqcngjEQFax2/kFnvsSPa6FhmgdE0TfyL8Cq8Ug==";
       };
     };
     "matrix-bot-sdk-0.4.0" = {
@@ -4265,14 +4265,14 @@ let
   };
 in
 {
-  "matrix-appservice-irc-git+https://github.com/matrix-org/matrix-appservice-irc.git#0.20.1" = nodeEnv.buildNodePackage {
+  "matrix-appservice-irc-git+https://github.com/matrix-org/matrix-appservice-irc.git#0.21.0" = nodeEnv.buildNodePackage {
     name = "matrix-appservice-irc";
     packageName = "matrix-appservice-irc";
-    version = "0.20.1";
+    version = "0.21.0";
     src = fetchgit {
       url = "https://github.com/matrix-org/matrix-appservice-irc.git";
-      rev = "6667d243f67a8bc331c5f21e3168dc55c6630405";
-      sha256 = "c2d8896ad7f263989cda54d720a352e0ca54a23340bab007d2d1c0ae18ddf1a7";
+      rev = "92a59d4b5a6d2575f2001840e41443a11f9cbbfd";
+      sha256 = "e0256c546f1fcdf4d3adf5ab02b28b88bb14f7b62b4636838539e0569a9c580a";
     };
     dependencies = [
       sources."@babel/code-frame-7.10.4"
@@ -4416,7 +4416,7 @@ in
         ];
       })
       sources."dashdash-1.14.1"
-      sources."debug-4.3.0"
+      sources."debug-4.3.1"
       sources."decamelize-1.2.0"
       sources."deep-is-0.1.3"
       sources."default-require-extensions-2.0.0"
@@ -4635,8 +4635,8 @@ in
           sources."semver-5.7.1"
         ];
       })
-      sources."matrix-appservice-0.4.2"
-      (sources."matrix-appservice-bridge-1.14.0-rc2" // {
+      sources."matrix-appservice-0.6.0"
+      (sources."matrix-appservice-bridge-2.2.0" // {
         dependencies = [
           sources."extend-3.0.2"
           sources."nopt-4.0.3"
