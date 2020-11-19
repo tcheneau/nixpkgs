@@ -4326,7 +4326,7 @@ in
     src = fetchgit {
       url = "https://github.com/matrix-org/matrix-appservice-irc.git";
       rev = "6a36187aeba24de13849b02b07f299403453c1b1";
-      sha256 = "b8e958017c5624b9550403dca829d53bed4a480fa62b402e697864a33e746992";
+      sha256 = "0smhvjkihk1yspl0yh59ywdmza8bdm7v3785w8sr317fljnjylsa";
     };
     dependencies = [
       sources."@babel/code-frame-7.8.3"
