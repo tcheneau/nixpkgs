@@ -2408,31 +2408,22 @@ let
         sha512 = "LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==";
       };
     };
-    "matrix-appservice-0.6.0" = {
+    "matrix-appservice-0.4.2" = {
       name = "matrix-appservice";
       packageName = "matrix-appservice";
-      version = "0.6.0";
+      version = "0.4.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/matrix-appservice/-/matrix-appservice-0.6.0.tgz";
-        sha512 = "MkM4PzBeNBi/AcSDWgUD6zWlGY2ckBSF3dn8IgXWf44uHDx6WZfWyIt4E/KKsx9iy3EO78IfWmK+7Qva4eug5A==";
+        url = "https://registry.npmjs.org/matrix-appservice/-/matrix-appservice-0.4.2.tgz";
+        sha512 = "YD2zFiPo9FedjA86gfWFN2UVDwDBhWL1Kas/txG0iwpT6jcJmOvpPqbfuFeYk3Q3G3c5BZ8k8tABMpzS9Bu39A==";
       };
     };
-    "matrix-appservice-0.7.1" = {
-      name = "matrix-appservice";
-      packageName = "matrix-appservice";
-      version = "0.7.1";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/matrix-appservice/-/matrix-appservice-0.7.1.tgz";
-        sha512 = "oUjEz+eKfBw66FnQ3/D7PWcq+/oq9gzJVlNOMQUSGXgK70o8JT3toeFMYsJChaIimU5fIsHbTVyHC+eVGb7MSQ==";
-      };
-    };
-    "matrix-appservice-bridge-2.3.1" = {
+    "matrix-appservice-bridge-1.14.0-rc2" = {
       name = "matrix-appservice-bridge";
       packageName = "matrix-appservice-bridge";
-      version = "2.3.1";
+      version = "1.14.0-rc2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/matrix-appservice-bridge/-/matrix-appservice-bridge-2.3.1.tgz";
-        sha512 = "sHr3s0O7CetW3Zt1zo2wd23GadQzzDtQ518uFGs+j9kADwdJrVIHO/3YSXwjYUGIGH4MqPyFu7JxCS/hJXpBHw==";
+        url = "https://registry.npmjs.org/matrix-appservice-bridge/-/matrix-appservice-bridge-1.14.0-rc2.tgz";
+        sha512 = "XrgEyMCfiuHYTZ837IanAJ3C1mAgzfFwIo18DN6G+Dfc4oy/u4XsUYwViZVCvTfdMgJt2ZQdK31V8EpHD/yRww==";
       };
     };
     "matrix-bot-sdk-0.4.0" = {
@@ -4274,14 +4265,14 @@ let
   };
 in
 {
-  "matrix-appservice-irc-git+https://github.com/matrix-org/matrix-appservice-irc.git#0.22.0" = nodeEnv.buildNodePackage {
+  "matrix-appservice-irc-git+https://github.com/matrix-org/matrix-appservice-irc.git#0.20.1" = nodeEnv.buildNodePackage {
     name = "matrix-appservice-irc";
     packageName = "matrix-appservice-irc";
-    version = "0.22.0";
+    version = "0.20.1";
     src = fetchgit {
       url = "https://github.com/matrix-org/matrix-appservice-irc.git";
-      rev = "91227f0efe68b0f0a3860e69c25518d3a54d8b22";
-      sha256 = "4a532fada4ee849135e2059db14f6d0ba95f1bf7a9400fe8d53e4c18a7dcb06a";
+      rev = "6667d243f67a8bc331c5f21e3168dc55c6630405";
+      sha256 = "c2d8896ad7f263989cda54d720a352e0ca54a23340bab007d2d1c0ae18ddf1a7";
     };
     dependencies = [
       sources."@babel/code-frame-7.10.4"
@@ -4644,11 +4635,10 @@ in
           sources."semver-5.7.1"
         ];
       })
-      sources."matrix-appservice-0.6.0"
-      (sources."matrix-appservice-bridge-2.3.1" // {
+      sources."matrix-appservice-0.4.2"
+      (sources."matrix-appservice-bridge-1.14.0-rc2" // {
         dependencies = [
           sources."extend-3.0.2"
-          sources."matrix-appservice-0.7.1"
           sources."nopt-4.0.3"
         ];
       })
