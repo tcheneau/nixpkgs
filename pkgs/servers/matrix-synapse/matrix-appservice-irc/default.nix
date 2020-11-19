@@ -12,7 +12,7 @@ let
   };
 in
 nodePackages."${packageName}".override {
-  nativeBuildInputs = [ pkgs.makeWrapper ];
+  nativeBuildInputs = [ pkgs.makeWrapper nodePackages.node-gyp-build ];
 
   postInstall = ''
     makeWrapper '${nodejs}/bin/node' "$out/bin/matrix-appservice-irc" \
